@@ -1,14 +1,14 @@
-# asp-warehouse
+# Answer Set Programming to Control Warehouse Robots
 Use answer set programming (clingo) to find the optimal sequence for a fleet of warehouse robots.
 
-Warehouse environment where robots must bring items from shelves in warehouse to a delivery station.
+Warehouse environment is represented as a grid of cells where robots must bring items from shelves to a picking station for delivery.
 
-Robot Capabilities:
-- Robots move orthogonally
-- Robots can move under shelves when they are not carrying anything
-- Robots can pickup and putdown objects to bring products to the delivery stations
+Rules:
+- Robots are flat and can move underneath shelves.
+- Robots move orthogonally.
+- Robots can take 1 action per timestep.
+- Shelves cannot move through each other.
+- Robots can pick up and put down shelves to move/deliver products.
+- Designated highway lanes are defined, which prevent shelves from being placed there.
 
-Other Features:
-- Designated highway lanes where no robot may place a shelf.
-- Works for any size warehouse, any number of shelves/products/delivery stations.
-- Optimizes for both minimal number of actions and minimal timesteps.
+Clingo is used to find the optimal sequence which minimizes both the number of timesteps and number of actions.
